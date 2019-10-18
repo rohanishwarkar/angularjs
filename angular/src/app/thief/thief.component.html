@@ -1,0 +1,75 @@
+<div class="row">
+  <div class="col s12">
+    <div class="card  teal darken-4">
+      <div class="card-content white-text">
+        <div class="row">
+          <div class="col s5">
+            <form #thiefForm="ngForm" (ngSubmit)="onSubmit(thiefForm)">
+              <input type="hidden" name="_id" #_id="ngModel" [(ngModel)]="thiefService.selectedThief._id">
+              <div class="row">
+                <div class="input-field col s12">
+                  <input type="text" name="name" #name="ngModel" [(ngModel)]="thiefService.selectedThief.name" placeholder="Enter name" required>
+                  <label>Name :
+                    <label class="red-text">*</label>
+                  </label>
+                </div>
+              </div>
+              <div class="row">
+                <div class="input-field col s12">
+                  <input type="text" name="area" #name="ngModel" [(ngModel)]="thiefService.selectedThief.area" placeholder="Enter area of Operation">
+                  <label>Area of Operation :</label>
+                </div>
+              </div>
+              <div class="row">
+                <div class="input-field col s12">
+                  <input type="text" name="crime" #name="ngModel" [(ngModel)]="thiefService.selectedThief.crime" placeholder="Enter crime (Murder,Theft)">
+                  <label>Crime Committed :</label>
+                </div>
+              </div>
+              <div class="row">
+                <div class="input-field col s12">
+                  <input type="text" name="phone" #name="ngModel" [(ngModel)]="thiefService.selectedThief.phone" placeholder="Enter Phone Number">
+                  <label>Phone :</label>
+                </div>
+              </div>
+              <div class="row">
+                <div class="input-field col s12">
+                  <button class="btn btn-custom right" type="button" (click)="resetForm(thiefForm)">Reset</button>
+                  <button class="btn btn-custom right" type="submit" [disabled]="!thiefForm.valid">Submit</button>
+                </div>
+              </div>
+            </form>
+          </div>
+          <div class="col s7">
+              <table class="responsive-table highlight">
+                  <thead>
+                    <tr>
+                      <th>Name</th>
+                      <th>Area</th>
+                      <th>Crime</th>
+                      <th>Phone</th>
+                      <th></th>
+                    </tr>
+                  </thead>
+                  <tr *ngFor="let th of thiefService.thieves">
+                    <td>{{th.name}}</td>
+                    <td>{{th.area}}</td>
+                    <td>{{th.crime}}</td>
+                    <td>{{th.phone}}</td>
+                    <td>
+                        <a class="action-btn" (click)="onEdit(th)">
+                          <i class="material-icons">edit</i>
+                        </a>
+                        <a class="action-btn" (click)="onDelete(th._id,thiefForm)">
+                          <i class="material-icons">delete</i>
+                        </a>
+                      </td>
+                  </tr>
+                </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
