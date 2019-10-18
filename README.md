@@ -4,13 +4,13 @@ https://nodejs.org/en/
 npm install -g @angular/cli
 3) cd into server folder and run <br>
 npm install <br>
-This installs all dependencies<br>
+This installs all dependencies.<br>
 4) cd into angular folder and run <br>
 npm install<br>
-This install all dependencies<br>
+This installs all dependencies.<br>
 5) Install mongodb from below link<br>
 https://www.mongodb.com/download-center/community?jmp=docs<br>
-Install it Completely along with MongoCompass<br>
+Install it Completely along with MongoDBCompass.<br>
 6) Now open Mongo DB Compass and connect to default settings.<br>
 Create a database named MyDB and collection named thiefs.<br>
 7) Go to server folder and run<br>
